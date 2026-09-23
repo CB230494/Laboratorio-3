@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programación Aplicada | Laboratorio 3 · Streamlit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">&lt;/&gt;</span>
+      <div>
+        <b>PROGRAMACIÓN APLICADA</b>
+        <small>Laboratorio 3 · Proyectos simulados en Streamlit</small>
+      </div>
+    </div>
+    <div id="hud" class="hud hidden">
+      <span>PROYECTO <b id="hudProject">1</b>/3</span>
+      <span>PASO <b id="hudStep">1</b>/8</span>
+      <span>✓ <b id="hudDone">0</b>/24</span>
+      <span>↺ <b id="hudErrors">0</b></span>
+      <span>⏱ <b id="timer">00:00</b></span>
+    </div>
+  </header>
+
+  <main>
+    <section id="welcome" class="screen welcome">
+      <div class="hero-card glass">
+        <div class="eyebrow">GITHUB · STREAMLIT · PRÁCTICA GUIADA</div>
+        <h1>3 proyectos.<br><span>Del Bloc de notas a una app publicada.</span></h1>
+        <p>
+          Laboratorio práctico de la Lección 3. Vas a repetir el flujo completo:
+          crear <code>app.py</code> y <code>requirements.txt</code>, guardarlos correctamente,
+          crear el repositorio, subir archivos, configurar Streamlit y probar la aplicación.
+        </p>
+
+        <div class="feature-grid">
+          <div><b>3</b><small>proyectos</small></div>
+          <div><b>24</b><small>pasos</small></div>
+          <div><b>LIVE</b><small>simulación</small></div>
+        </div>
+
+        <div class="project-preview-grid">
+          <article>
+            <span>01</span>
+            <b>Registro de datos</b>
+            <small>Nombre, teléfono y cédula</small>
+          </article>
+          <article>
+            <span>02</span>
+            <b>Calculadora</b>
+            <small>Operaciones básicas</small>
+          </article>
+          <article>
+            <span>03</span>
+            <b>Mini dashboard</b>
+            <small>5 filas, gráfica y resumen</small>
+          </article>
+        </div>
+
+        <a class="guide-link" href="material/Leccion_3_Guia_Paso_a_Paso_GitHub_Streamlit.pdf" target="_blank">
+          📘 ABRIR GUÍA PASO A PASO DE LA LECCIÓN 3
+        </a>
+
+        <label class="name-label">Nombre del estudiante</label>
+        <input id="studentName" class="main-input" maxlength="40" placeholder="Escribe tu nombre">
+        <button id="startBtn" class="primary">INICIAR LABORATORIO <span>→</span></button>
+        <div id="records" class="records"></div>
+      </div>
+    </section>
+
+    <section id="lab" class="screen hidden">
+      <div class="progress-shell"><div id="progressBar"></div></div>
+
+      <div class="lab-layout">
+        <aside class="side glass">
+          <div class="side-title">MAPA DEL LABORATORIO</div>
+          <div id="projectMap" class="project-map"></div>
+
+          <div class="side-help">
+            <b>Material de apoyo</b>
+            <p>Usá la guía de la Lección 3 cuando necesités recordar el procedimiento.</p>
+            <a href="material/Leccion_3_Guia_Paso_a_Paso_GitHub_Streamlit.pdf" target="_blank">Abrir PDF ↗</a>
+          </div>
+        </aside>
+
+        <article class="challenge glass">
+          <div class="challenge-head">
+            <div>
+              <span id="projectTag" class="category">PROYECTO 1</span>
+              <span id="stepTag" class="difficulty">PASO 1 DE 8</span>
+            </div>
+            <span id="challengeNumber" class="number">01</span>
+          </div>
+
+          <div class="project-kicker" id="projectKicker"></div>
+          <h2 id="title"></h2>
+          <p id="prompt" class="prompt"></p>
+
+          <div id="workspace"></div>
+          <div id="feedback" class="feedback hidden"></div>
+
+          <div class="actions">
+            <button id="checkBtn" class="primary">VALIDAR PASO</button>
+            <button id="nextBtn" class="secondary hidden">SIGUIENTE PASO →</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="results" class="screen hidden">
+      <div class="result-card glass">
+        <div class="eyebrow">LABORATORIO 3 FINALIZADO</div>
+        <h1>Excelente trabajo, <span id="resultName"></span></h1>
+
+        <div class="score-ring">
+          <strong id="finalScore">24/24</strong>
+          <span>pasos completados</span>
+        </div>
+
+        <div class="result-stats">
+          <div><b id="finalTime">00:00</b><small>tiempo</small></div>
+          <div><b id="firstTry">0</b><small>al primer intento</small></div>
+          <div><b id="totalErrors">0</b><small>correcciones</small></div>
+        </div>
+
+        <div class="final-projects">
+          <article><span>✓</span><b>Registro de datos</b><small>Publicado y probado</small></article>
+          <article><span>✓</span><b>Calculadora</b><small>Publicado y probado</small></article>
+          <article><span>✓</span><b>Mini dashboard</b><small>Publicado y probado</small></article>
+        </div>
+
+        <div id="recordMessage" class="record-message"></div>
+        <button id="restartBtn" class="primary">INICIAR OTRO INTENTO</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
